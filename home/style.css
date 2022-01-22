@@ -1,23 +1,66 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 
 body {
-	background-color: #333;
+	background-color: #22272e;
 	color: #ccc;
-	font-family: "Rubik", sans-serif;
-	overflow-x: hidden;
+	font-family: "Open Sans", sans-serif;
 }
 
 #action-bar {
 	width: 100%;
-	height: 10%;
-	background-color: #222;
+	height: 8%;
+	background-color: #1c2128;
 	position: absolute;
 	left: 0px;
-	top: 0
+	top: 0;
+	border-bottom: #444c56 1px solid;
 }
 
 #code-rain {
 	position: absolute;
-	top: 10%;
+	top: calc(8% + 1px);
 	left: 0px;
+}
+
+#opening-cover {
+	position: absolute;
+	top: calc(8% + 1px);
+	left: 0px;
+	width: 100%;
+	height: calc(92vh - 1px);
+	background-color: #0008;
+	border-bottom: #444c56 1px solid;
+}
+
+#opening-title {
+	font-size: 10vh;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-weight: 300;
+}
+
+#opening-nav {
+	background-image: url("../resources/icons/ArrowDown.png");
+	position: absolute;
+	width: 6vh;
+	height: 3vh;
+	background-position: center;
+	background-size: cover;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#what {
+	width: 100%;
+	height: 60%;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	text-align: center;
+}
+#what h1 {
+	font-size: 40px;
 }

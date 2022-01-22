@@ -4,12 +4,12 @@ function startAnimations() {
 
 function codeRain() {
 	const canvas = document.getElementById("code-rain");
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight * 0.9;
+	canvas.width = window.visualViewport.width;
+	canvas.height = window.visualViewport.height * 0.92 - 1;
 	
 	const ctx = canvas.getContext("2d");
 
-	ctx.fillStyle = "#000000";
+	ctx.fillStyle = "#22272e";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 	class Drop {
@@ -53,7 +53,7 @@ function codeRain() {
 
 	var drops = [];
 
-	for (var i = 0; i < 500; i++) {
+	for (var i = 0; i < (canvas.width + canvas.height) / 5; i++) {
 		drops.push(new Drop(
 			Utils.roundToFactor(Math.random() * canvas.width, canvas.height / 64, "round"), 
 			Math.random() * -canvas.height * 1.5, 
@@ -72,10 +72,10 @@ function codeRain() {
 	var rainColor = 0;
 
 	setInterval(() => {
-		ctx.fillStyle = "#000000";
+		ctx.fillStyle = "#22272e";
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-		ctx.fillStyle = Utils.hslToHex(rainColor, 100, 40);
+		ctx.fillStyle = Utils.hslToHex(rainColor, 100, 50);
 		drops.forEach((drop) => {
 			drop.fall();
 		})
